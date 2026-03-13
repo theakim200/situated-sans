@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Situated Sans</title>
+</head>
+<body>
+
+    <!-- MENU BAR -->
+    <nav id="menu-bar">
+        <button class="menu-btn" data-section="info"     data-color="#FF3464" data-img="assets/menu/hover-info.png"     data-img-width="80">Info</button>
+        <button class="menu-btn" data-section="try"      data-color="#217784" data-img="assets/menu/hover-try.png"      data-img-width="80">Try</button>
+        <button class="menu-btn" data-section="embody"   data-color="#BEF430" data-img="assets/menu/hover-embody.png"   data-img-width="80">Em:body Typing</button>
+        <button class="menu-btn" data-section="inuse"    data-color="#FF5E32" data-img="assets/menu/hover-inuse.png"    data-img-width="80">In Use</button>
+        <button class="menu-btn" data-section="research" data-color="#FF7D9D" data-img="assets/menu/hover-research.png" data-img-width="80">Research</button>
+        <button class="menu-btn" data-section="download" data-color="#10A0EB" data-img="assets/menu/hover-download.png" data-img-width="80">Download</button>
+        <button class="menu-btn" data-section="credits"  data-color="#2FEB72" data-img="assets/menu/hover-credits.png"  data-img-width="80">Credits</button>
+    </nav>
+    <div id="hover-image-container">
+        <img id="hover-image" src="" alt="">
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div id="hero-popup">
+            <div id="hero-popup-text">
+                You are on desktop!<br>
+                Move the mouse, click randomly,
+                and move the cursor toward and away from the text.
+            </div>
+            <button id="hero-popup-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <circle cx="13" cy="13" r="13" fill="black"/>
+                    <svg x="7" y="7" width="12" height="12" viewBox="0 0 12 12">
+                        <line x1="0.637273" y1="0.712519" x2="11.306" y2="11.3813" stroke="white" stroke-width="1.75"/>
+                        <line x1="11.2877" y1="0.618718" x2="0.618917" y2="11.2875" stroke="white" stroke-width="1.75"/>
+                    </svg>
+                </svg>
+            </button>
+        </div>
+        <h1 id="hero-title">Situated Sans</h1>
+        <div id="hero-sub">
+            <span>Situated Sans Collection: 3 Families, 18 Styles, 3 Variable Axes</span>
+            <span>Embody various situation of typing</span>
+        </div>
+    </section>
+
+    <!-- INFO -->
+    <section id="info" data-color="#FF3464">
+        <div id="info-top">
+            <div id="info-left">
+                <h2 id="info-title">Why Situated Sans?</h2>
+                <p id="info-body">Digital typing has become uniform, fast, efficient, but also disembodied. Every keystroke produces identical letters, erasing the physical presence of the writer. Situated Sans challenges this reproducibility. What if digital text could carry traces of your body? Your posture, your breathing, your rhythm, your physical state in space and time?
+    Situated Sans is a variable typeface that makes typing a physical act again, revealing who you are beyond the screen. This typeface doesn't just transmit meaning but embodies the situation of writing. Each message becomes unrepeatable, carrying the physical and contextual reality of its creation. Typography becomes a record of the body: where you are, how you move, how you breathe, how you feel in the moment of typing.</p>
+            </div>
+            <div id="info-right">
+                <div class="axis-text" id="axis-weight"><span>W</span><span>e</span><span>i</span><span>g</span><span>h</span><span>t</span></div>
+                <div class="axis-text" id="axis-slant"><span>S</span><span>l</span><span>a</span><span>n</span><span>t</span></div>
+                <div class="axis-text" id="axis-width"><span>W</span><span>i</span><span>d</span><span>t</span><span>h</span></div>
+            </div>
+        </div>
+        <div id="info-gallery">
+            <div id="gallery-display">
+                <div id="gallery-nav">
+                    <button class="gallery-btn active" data-index="0">1</button>
+                    <button class="gallery-btn" data-index="1">2</button>
+                    <button class="gallery-btn" data-index="2">3</button>
+                    <button class="gallery-btn" data-index="3">4</button>
+                    <button class="gallery-btn" data-index="4">5</button>
+                </div>
+                <img class="gallery-img active" src="assets/info/gallery-1.jpg" alt="Gallery 1">
+                <img class="gallery-img" src="assets/info/gallery-2.jpg" alt="Gallery 2">
+                <img class="gallery-img" src="assets/info/gallery-3.jpg" alt="Gallery 3">
+                <img class="gallery-img" src="assets/info/gallery-4.jpg" alt="Gallery 4">
+                <img class="gallery-img" src="assets/info/gallery-5.jpg" alt="Gallery 5">
+                <p id="gallery-caption">Caption 1</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- TRY -->
+    <section id="try" data-color="#217784">
+        <div id="try-inner">
+            <h2 id="try-title">Typetester</h2>
+            <div id="try-sliders">
+                <div class="slider-set">
+                    <span class="slider-label">Slant</span>
+                    <div class="slider-wrap">
+                        <svg class="triangle-min" width="8" height="12" viewBox="0 0 8 12"><polygon points="8,0 8,12 0,6" fill="white"/></svg>
+                        <div class="slider-track">
+                            <input type="range" class="custom-slider" id="slider-slant" min="0" max="100" value="50">
+                            <div class="slider-handle" id="handle-slant">50</div>
+                        </div>
+                        <svg class="triangle-max" width="12" height="16" viewBox="0 0 12 16"><polygon points="12,0 12,16 0,8" fill="white"/></svg>
+                    </div>
+                </div>
+                <div class="slider-set">
+                    <span class="slider-label">Width</span>
+                    <div class="slider-wrap">
+                        <svg class="triangle-min" width="8" height="12" viewBox="0 0 8 12"><polygon points="8,0 8,12 0,6" fill="white"/></svg>
+                        <div class="slider-track">
+                            <input type="range" class="custom-slider" id="slider-width" min="0" max="100" value="45">
+                            <div class="slider-handle" id="handle-width">45</div>
+                        </div>
+                        <svg class="triangle-max" width="12" height="16" viewBox="0 0 12 16"><polygon points="12,0 12,16 0,8" fill="white"/></svg>
+                    </div>
+                </div>
+                <div class="slider-set">
+                    <span class="slider-label">Weight</span>
+                    <div class="slider-wrap">
+                        <svg class="triangle-min" width="8" height="12" viewBox="0 0 8 12"><polygon points="8,0 8,12 0,6" fill="white"/></svg>
+                        <div class="slider-track">
+                            <input type="range" class="custom-slider" id="slider-weight" min="60" max="150" value="83">
+                            <div class="slider-handle" id="handle-weight">83</div>
+                        </div>
+                        <svg class="triangle-max" width="12" height="16" viewBox="0 0 12 16"><polygon points="12,0 12,16 0,8" fill="white"/></svg>
+                    </div>
+                </div>
+            </div>
+            <div id="try-display" contenteditable="true" spellcheck="false">Situational typing...</div>
+        </div>
+    </section>
+
+    <!-- EM:BODY TYPING -->
+    <section id="embody" data-color="#BEF430">
+        <div id="embody-top">
+            <div id="embody-left">
+                <h2 id="embody-title">Em:body Typing</h2>
+                <p id="embody-body">Em:body Typing is a web-based chat application that uses <em>Situated Sans</em> to make typing a physical act again. Big tech companies have attempted to personalize digital text through animations, but these remain aesthetic choices rather than traces of the body. In this chat, letterform draws attention to the body beyond the digital text by interacting with the writer through pressure, orientation, and rhythm. Typing is more than input and output, but a personal act that reveals who you are. Your typing carry traces of your body's position, emotion, breathing, and more, bringing humans back into digital communication.</p>
+            </div>
+            <div id="embody-right">
+                <img id="embody-img" src="assets/embody/embody-right.png" alt="Em:body Typing install">
+                <p id="embody-img-caption">This site is live. Visit and leave your trace!<br><a href="http://embody-typing.live" target="_blank">embody-typing.live</a></p>
+            </div>
+        </div>
+        <div id="embody-gallery">
+            <div id="embody-gallery-display">
+                <div id="embody-gallery-nav">
+                    <button class="embody-gallery-btn active" data-index="0">1</button>
+                    <button class="embody-gallery-btn" data-index="1">2</button>
+                    <button class="embody-gallery-btn" data-index="2">3</button>
+                    <button class="embody-gallery-btn" data-index="3">4</button>
+                    <button class="embody-gallery-btn" data-index="4">5</button>
+                </div>
+                <img class="embody-gallery-img active" src="assets/embody/gallery-1.png" alt="">
+                <img class="embody-gallery-img" src="assets/embody/gallery-2.png" alt="">
+                <img class="embody-gallery-img" src="assets/embody/gallery-3.png" alt="">
+                <img class="embody-gallery-img" src="assets/embody/gallery-4.png" alt="">
+                <img class="embody-gallery-img" src="assets/embody/gallery-5.png" alt="">
+                <p id="embody-gallery-caption">Caption 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IN USE -->
+    <section id="inuse" data-color="#FF5E32">
+        <h2 id="inuse-title">More In Use</h2>
+        <div id="inuse-grid">
+            <div class="inuse-item" id="inuse-1">
+                <div class="inuse-thumb">
+                    <img src="assets/inuse/inuse-1.jpg" alt="Catch Phrase">
+                </div>
+                <p class="inuse-name">Catch Phrase</p>
+                <button class="inuse-more">•••</button>
+                <div class="inuse-desc hidden">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="inuse-item" id="inuse-2">
+                <div class="inuse-thumb">
+                    <img src="assets/inuse/inuse-2.jpg" alt="Driftwood Project">
+                </div>
+                <p class="inuse-name">Driftwood Project</p>
+                <button class="inuse-more">•••</button>
+                <div class="inuse-desc hidden">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="inuse-item" id="inuse-3">
+                <div class="inuse-thumb">
+                    <img src="assets/inuse/inuse-3.jpg" alt="Family Family">
+                </div>
+                <p class="inuse-name">Family Family</p>
+                <button class="inuse-more">•••</button>
+                <div class="inuse-desc hidden">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" data-color="#FF7D9D">
+        <div id="research-top">
+            <h2 id="research-title">Situationist International</h2>
+            <p id="research-body">Situationist International was a 1960s avant-garde movement that critiqued how capitalism turns life into passive spectacle. Led by Guy Debord, they argued we've lost direct, embodied experience and everything is mediated through images and consumption. They valued 'constructed situations' and moments that break routine and make us actively present. Central to their philosophy was psychogeography: the idea that our physical surroundings and bodily states shape our experience, and a rejection of the uniform, reproducible nature of mass culture. Situated Sans applies this critique to typography. Digital text has become uniform and disembodied, producing identical letters that erase the physical presence of the writer. This font responds to your complete physical state, making each typing moment a unique, situated experience. It moves away from reproducibility. You cannot write the same sentence identically twice. Situated Sans is designed as a framework for embodied typography that extends beyond any single application. Any parameter that situates the body in space, time, and circumstance can become typographic expression. Typography becomes a record of your full presence in the moment of writing, bringing the body back into digital text.</p>
+        </div>
+        <div id="research-gallery">
+            <div id="research-gallery-display">
+                <div id="research-gallery-nav">
+                    <button class="research-gallery-btn active" data-index="0">1</button>
+                    <button class="research-gallery-btn" data-index="1">2</button>
+                    <button class="research-gallery-btn" data-index="2">3</button>
+                    <button class="research-gallery-btn" data-index="3">4</button>
+                    <button class="research-gallery-btn" data-index="4">5</button>
+                </div>
+                <img class="research-gallery-img active" src="assets/research/gallery-1.png" alt="">
+                <img class="research-gallery-img" src="assets/research/gallery-2.png" alt="">
+                <img class="research-gallery-img" src="assets/research/gallery-3.png" alt="">
+                <img class="research-gallery-img" src="assets/research/gallery-4.png" alt="">
+                <img class="research-gallery-img" src="assets/research/gallery-5.png" alt="">
+                <p id="research-gallery-caption">Caption 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" data-color="#10A0EB">
+        <div id="download-header">
+            <h2 id="download-title">Download</h2>
+        </div>
+        <div id="download-top">
+            <div id="download-left">
+                <p id="download-body">Download the font files and start experimenting!
+    The package includes OTF and variable font formats. Drop the variable font into your project to access all axes through a single file. These snippets map device orientation, touch pressure, and typing speed to font variation axes. But any data source works: scroll position, mouse movement, audio input, time of day. Let the world write with you!</p>
+            </div>
+            <div id="download-right">
+                <a href="assets/download/SituatedSans.zip" download="SituatedSans.zip">
+                    <img id="download-img" src="assets/download/download-img.png" alt="Download Situated Sans">
+                </a>
+            </div>
+        </div>
+        <div id="download-snippets">
+            <div class="snippet">
+                <div class="snippet-header">
+                    <span class="snippet-comment">// Orientation → Slant</span>
+                    <button class="copy-btn" data-target="snippet-1"><img src="assets/download/copy-icon.svg" alt="copy"></button>
+                </div>
+                <pre id="snippet-1">window.addEventListener('deviceorientation', (e) => {
+    const italic = ((e.gamma + 90) / 180) * 100; // 0–100
+    el.style.fontVariationSettings = `'ital' ${italic}`;
+    });</pre>
+            </div>
+            <div class="snippet">
+                <div class="snippet-header">
+                    <span class="snippet-comment">// Pressure → Weight</span>
+                    <button class="copy-btn" data-target="snippet-2"><img src="assets/download/copy-icon.svg" alt="copy"></button>
+                </div>
+                <pre id="snippet-2">el.addEventListener('touchstart', (e) => {
+    const r = (e.touches[0].radiusX + e.touches[0].radiusY) / 2;
+    const weight = Math.min(150, Math.max(60, 60 + ((r - 20) / 30) * 90));
+    el.style.fontVariationSettings = `'wght' ${weight}`;
+    });</pre>
+            </div>
+            <div class="snippet">
+                <div class="snippet-header">
+                    <span class="snippet-comment">// Typing Speed → Width</span>
+                    <button class="copy-btn" data-target="snippet-3"><img src="assets/download/copy-icon.svg" alt="copy"></button>
+                </div>
+                <pre id="snippet-3">let lastTime = null;
+    el.addEventListener('keydown', () => {
+    const interval = lastTime ? Date.now() - lastTime : 0;
+    lastTime = Date.now();
+    const width = Math.min(100, Math.max(0, (interval - 100) / 1100 * 100));
+    el.style.fontVariationSettings = `'wdth' ${width}`;
+    });</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section id="credits" data-color="#2FEB72">
+        <div id="credits-header">
+            <h2 id="credits-title">Credits</h2>
+        </div>
+        <div id="credits-top">
+            <div id="credits-left">
+                <p id="credits-body">Situated Sans is free for personal, educational, and non-commercial use under the <a href="http://www.wtfpl.net" target="_blank">WTFPL</a>. For commercial use, license by company size. For student, broadcast, or enterprise inquiries, contact <a href="mailto:theakim200@gmail.com">theakim200@gmail.com</a></p>
+                <p id="credits-body2">Situated Sans is based on Authentic Sans by <a href="https://authentic.website" target="_blank">Authentic Business Company LLC</a>.</p>
+            </div>
+            <div id="credits-right">
+                <table id="credits-table">
+                    <tr><td>Design</td><td>Thea Kim</td></tr>
+                    <tr><td>Families</td><td>Condensed, Regular, Extended</td></tr>
+                    <tr><td>Static Styles</td><td>Light, Light Italic, Regular, Regular Italic, Bold, Bold Italic × Condensed, Regular, Extended</td></tr>
+                    <tr><td>Variable Axes</td><td>Weight, Width, Italic</td></tr>
+                    <tr><td>File Formats</td><td>otf, ttf</td></tr>
+                    <tr><td>Release Year</td><td>2025</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div id="footer-left">
+            <span>© 2026 Thea Kim</span>
+            <span>Website design and development by Thea Kim</span>
+        </div>
+        <div id="footer-right">
+            <a href="mailto:theakim200@gmail.com">Contact</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://theakim.com" target="_blank">Website</a>
+        </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/typetester.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hero.js"></script>
+</body>
+</html>

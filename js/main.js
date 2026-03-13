@@ -18,7 +18,7 @@ galleryBtns.forEach(btn => {
 const embodyGalleryBtns = document.querySelectorAll('.embody-gallery-btn');
 const embodyGalleryImgs = document.querySelectorAll('.embody-gallery-img');
 const embodyCaption = document.getElementById('embody-gallery-caption');
-const embodyCaptions = ["A recording of a conversation with a friend using Em:body Typing", "Responsive phrases that reveal the writer's state and emotions", 'Caption 3', 'Caption 4', 'Caption 5'];
+const embodyCaptions = ["A recording of a conversation with a friend using Em:body Typing", "Responsive phrases that reveal the writer's state and emotions", "A screenshot of the moment of sending a group text to multiple people", "Development process and debugging"];
 
 embodyGalleryBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -33,8 +33,8 @@ embodyGalleryBtns.forEach(btn => {
 
 const inuseItems = document.querySelectorAll('.inuse-item');
 const inuseTexts = [
-    'Digital typing has become uniform, fast, efficient, but also disembodied. Every keystroke produces identical letters, erasing the physical presence of the writer. Situated Sans challenges this reproducibility. What if digital text could carry traces of your body? Your posture, your breathing, your rhythm, your physical state in space and time?',
-    'Digital typing has become uniform, fast, efficient, but also disembodied. Every keystroke produces identical letters, erasing the physical presence of the writer. Situated Sans challenges this reproducibility. What if digital text could carry traces of your body? Your posture, your breathing, your rhythm, your physical state in space and time?',
+    'Ocean Mist releases a piece of driftwood found at the Ocean Mist Bar back into Narragansett Bay, sealed with a GPS tracker. As it moves with the current, its position is logged and rendered as an evolving map on a live website. When the driftwood is gone, the site remains as an archive of that time. Gaps in the data, where the wood drifts beyond signal range, are part of the work. — by Faith Kim',
+    'Ocean Mist releases a piece of driftwood found at the Ocean Mist Bar back into Narragansett Bay, sealed with a GPS tracker. As it moves with the current, its position is logged and rendered as an evolving map on a live website. When the driftwood is gone, the site remains as an archive of that time. Gaps in the data, where the wood drifts beyond signal range, are part of the work. \n— by Faith Kim @fk.88888',
     'Digital typing has become uniform, fast, efficient, but also disembodied. Every keystroke produces identical letters, erasing the physical presence of the writer. Situated Sans challenges this reproducibility. What if digital text could carry traces of your body? Your posture, your breathing, your rhythm, your physical state in space and time?',
 ];
 

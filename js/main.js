@@ -2,7 +2,7 @@ const galleryBtns = document.querySelectorAll('.gallery-btn');
 const galleryImgs = document.querySelectorAll('.gallery-img');
 const captionEl = document.getElementById('gallery-caption');
 
-const captions = ['Caption 1', 'Caption 2', 'Caption 3', 'Caption 4', 'Caption 5'];
+const captions = ["A doctor's first fee note from 1953", "Female office worker September 1936 1930s Electric typewriter", "USB Typewriter Replaces the Keyboard in Your PC", "Apple keyboards M0110", "iPhone virtual keyboard"];
 
 galleryBtns.forEach(btn => {
     btn.addEventListener('click', () => {

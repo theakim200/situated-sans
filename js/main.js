@@ -33,9 +33,9 @@ embodyGalleryBtns.forEach(btn => {
 
 const inuseItems = document.querySelectorAll('.inuse-item');
 const inuseTexts = [
-    'Ocean Mist releases a piece of driftwood found at the Ocean Mist Bar back into Narragansett Bay, sealed with a GPS tracker. As it moves with the current, its position is logged and rendered as an evolving map on a live website. When the driftwood is gone, the site remains as an archive of that time. Gaps in the data, where the wood drifts beyond signal range, are part of the work. — by Faith Kim',
+    'A series of A1-sized posters that reveal the speech habits and catchphrases of people around me through typing. Printed using silkscreen.',
     'Ocean Mist releases a piece of driftwood found at the Ocean Mist Bar back into Narragansett Bay, sealed with a GPS tracker. As it moves with the current, its position is logged and rendered as an evolving map on a live website. When the driftwood is gone, the site remains as an archive of that time. Gaps in the data, where the wood drifts beyond signal range, are part of the work. \n— by Faith Kim @fk.88888',
-    'Digital typing has become uniform, fast, efficient, but also disembodied. Every keystroke produces identical letters, erasing the physical presence of the writer. Situated Sans challenges this reproducibility. What if digital text could carry traces of your body? Your posture, your breathing, your rhythm, your physical state in space and time?',
+    'Just as with handwriting, each person has their own distinct habits when typing. By observing a person\u2019s typing trace alone, one can distinguish and identify their characteristics. \u201CFamily Family\u201D is a project that analyzes the typing personalities of close individuals and creates a distinct family style for each.',
 ];
 
 inuseItems.forEach((item, i) => {

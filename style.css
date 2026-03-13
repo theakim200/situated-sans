@@ -588,7 +588,7 @@ section {
 .inuse-item:hover .inuse-more {
     font-family: 'Sensory', sans-serif;
     font-variation-settings: var(--font-default);
-    width: 100%;
+    width: 90%;
     padding: 16px;
     font-size: 18px;
     line-height: 1.3;

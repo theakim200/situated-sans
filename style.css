@@ -28,6 +28,15 @@ body {
     font-variation-settings: var(--font-default);
 }
 
+html, body {
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
 section {
     min-height: 100vh;
 }

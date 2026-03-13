@@ -18,7 +18,7 @@ galleryBtns.forEach(btn => {
 const embodyGalleryBtns = document.querySelectorAll('.embody-gallery-btn');
 const embodyGalleryImgs = document.querySelectorAll('.embody-gallery-img');
 const embodyCaption = document.getElementById('embody-gallery-caption');
-const embodyCaptions = ['Caption 1', 'Caption 2', 'Caption 3', 'Caption 4', 'Caption 5'];
+const embodyCaptions = ["A recording of a conversation with a friend using Em:body Typing", "Responsive phrases that reveal the writer's state and emotions", 'Caption 3', 'Caption 4', 'Caption 5'];
 
 embodyGalleryBtns.forEach(btn => {
     btn.addEventListener('click', () => {

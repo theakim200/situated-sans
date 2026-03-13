@@ -350,10 +350,14 @@ section {
     white-space: nowrap;
 }
 
+.triangle-min {
+    transform: rotate(180deg);
+}
+
 .slider-wrap {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
 }
 
 .slider-track {
@@ -493,6 +497,8 @@ section {
 .embody-gallery-img {
     display: none;
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .embody-gallery-img.active {

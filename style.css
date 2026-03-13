@@ -695,6 +695,8 @@ section {
 .research-gallery-img {
     display: none;
     width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
 }
 
 .research-gallery-img.active {

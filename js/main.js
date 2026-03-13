@@ -57,7 +57,7 @@ inuseItems.forEach((item, i) => {
 const researchGalleryBtns = document.querySelectorAll('.research-gallery-btn');
 const researchGalleryImgs = document.querySelectorAll('.research-gallery-img');
 const researchCaption = document.getElementById('research-gallery-caption');
-const researchCaptions = ['Caption 1', 'Caption 2', 'Caption 3', 'Caption 4', 'Caption 5'];
+const researchCaptions = ["Certain founding members of the Situationist International in 1957.", "Figure 1 ⎜1957 The Naked City ⎜Photo by: Walsh, P. 2013", "Constant (Constant A. Nieuwenhuys)[no title] (1975–6) Tate © DACS, 2026", "Internationale situationniste", "The Situationist International Tinguely Museum Basel"];
 
 researchGalleryBtns.forEach(btn => {
     btn.addEventListener('click', () => {

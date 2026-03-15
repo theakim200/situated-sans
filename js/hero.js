@@ -61,6 +61,9 @@
             const cx = window.innerWidth / 2;
             const cy = window.innerHeight / 2;
 
+            hItal = Math.min(85, (e.clientX / window.innerWidth) * 100);
+            hWdth = Math.min(80, (dist / maxDist) * 100);
+
             hItal = (e.clientX / window.innerWidth) * 100;
 
             const distY = Math.abs(e.clientY - cy);

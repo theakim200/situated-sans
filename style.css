@@ -98,7 +98,6 @@ section {
 
 #hero-title {
     font-family: 'Sensory', sans-serif;
-    /* font-variation-settings: var(--font-default); */
     font-size: 172px;
     line-height: 1;
     cursor: default;
@@ -107,6 +106,9 @@ section {
     overflow: visible;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 #hero-sub {

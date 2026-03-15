@@ -12,27 +12,9 @@
     }
 
     if (isMobile) {
-        popupText.innerHTML = 'You are on mobile!<br>Tilt your device and press the screen.';
+        popupText.innerHTML = 'You are on mobile!<br>Tap X to allow motion access<br>and start interacting.';
 
-        function startOrientation() {
-            window.addEventListener('deviceorientation', (e) => {
-                if (e.gamma !== null) {
-                    hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
-                    applyFont();
-                }
-            });
-        }
-
-        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-            DeviceOrientationEvent.requestPermission()
-                .then(response => {
-                    if (response === 'granted') startOrientation();
-                })
-                .catch(console.error);
-        } else {
-            startOrientation();
-        }
-
+        // Touch pressure → wght
         heroSection.addEventListener('touchstart', (e) => {
             const touch = e.touches[0];
             const r = (touch.radiusX + touch.radiusY) / 2;
@@ -44,8 +26,35 @@
             hWght = 83;
             applyFont();
         });
+
+        popupClose.addEventListener('click', () => {
+            popup.style.display = 'none';
+
+            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response === 'granted') {
+                            window.addEventListener('deviceorientation', (e) => {
+                                if (e.gamma !== null) {
+                                    hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
+                                    applyFont();
+                                }
+                            });
+                        }
+                    })
+                    .catch(console.error);
+            } else {
+                // Android — 권한 요청 없이 바로
+                window.addEventListener('deviceorientation', (e) => {
+                    if (e.gamma !== null) {
+                        hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
+                        applyFont();
+                    }
+                });
+            }
+        });
+
     } else {
-        // 팝업 멘트
         popupText.innerHTML = 'You are on desktop!<br>Move the mouse, click randomly,<br>and move the cursor toward and away from the text.';
 
         function onMouseMove(e) {
@@ -82,9 +91,9 @@
         }, { threshold: 0.1 });
 
         heroObserver.observe(heroSection);
-    }
 
-    popupClose.addEventListener('click', () => {
-        popup.style.display = 'none';
-    });
+        popupClose.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    }
 })();

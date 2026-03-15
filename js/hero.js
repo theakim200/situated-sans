@@ -12,7 +12,7 @@
     }
 
     if (isMobile) {
-        popupText.innerHTML = 'You are on mobile!<br>Tap X to allow motion access<br>and start interacting.';
+        popupText.innerHTML = 'You are on mobile!<br>Tap X to allow motion access and start interacting.';
 
         // Touch pressure → wght
         heroSection.addEventListener('touchstart', (e) => {

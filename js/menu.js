@@ -1,3 +1,13 @@
+const menuToggle = document.getElementById('menu-toggle');
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        const menuButtons = document.getElementById('menu-buttons');
+        menuButtons.classList.toggle('open');
+    });
+}
+
+document.getElementById('menu-buttons').classList.remove('open');
+
 const menuBtns = document.querySelectorAll('.menu-btn');
 const hoverImgContainer = document.getElementById('hover-image-container');
 const hoverImg = document.getElementById('hover-image');
@@ -29,7 +39,7 @@ menuBtns.forEach(btn => {
             clearTimeout(fadeTimeout);
 
             hoverImg.src = imgSrc;
-            hoverImg.style.width = imgWidth + 'vw';
+            hoverImg.style.width = '100vw';
             hoverImgContainer.style.transition = 'none';
             hoverImgContainer.style.opacity = '1';
             hoverImgContainer.style.display = 'block';
@@ -50,7 +60,7 @@ menuBtns.forEach(btn => {
             btn.style.fontVariationSettings = `'ital' ${style.ital}, 'wdth' ${style.wdth}, 'wght' ${style.wght}`;
 
             hoverImg.src = imgSrc;
-            hoverImg.style.width = imgWidth + 'vw';
+            hoverImg.style.width = '80vw';
 
             if (id === 'try' && document.querySelector('.menu-btn[data-section="try"]').classList.contains('active')) {
                 hoverImgContainer.style.mixBlendMode = 'multiply';

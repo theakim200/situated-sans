@@ -1,4 +1,5 @@
-const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+// const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const isMobile = window.innerWidth <= 768;
 
 // main.js에서
 if (isMobile) document.body.classList.add('is-mobile');

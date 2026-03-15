@@ -12,15 +12,18 @@
 <body>
 
     <!-- MENU BAR -->
-    <nav id="menu-bar">
-        <button class="menu-btn" data-section="info"     data-color="#FF3464" data-img="assets/menu/hover-info.png"     data-img-width="80">Info</button>
-        <button class="menu-btn" data-section="try"      data-color="#217784" data-img="assets/menu/hover-try.png"      data-img-width="80">Try</button>
-        <button class="menu-btn" data-section="embody"   data-color="#BEF430" data-img="assets/menu/hover-embody.png"   data-img-width="80">Em:body Typing</button>
-        <button class="menu-btn" data-section="inuse"    data-color="#FF5E32" data-img="assets/menu/hover-inuse.png"    data-img-width="80">In Use</button>
-        <button class="menu-btn" data-section="research" data-color="#FF7D9D" data-img="assets/menu/hover-research.png" data-img-width="80">Research</button>
-        <button class="menu-btn" data-section="download" data-color="#10A0EB" data-img="assets/menu/hover-download.png" data-img-width="80">Download</button>
-        <button class="menu-btn" data-section="credits"  data-color="#2FEB72" data-img="assets/menu/hover-credits.png"  data-img-width="80">Credits</button>
-    </nav>
+<nav id="menu-bar">
+    <button id="menu-toggle" style="letter-spacing: 5%;">•••</button>
+    <div id="menu-buttons">
+        <button class="menu-btn" data-section="info"     data-color="#FF3464" data-img="assets/menu/hover-info.png">Info</button>
+        <button class="menu-btn" data-section="try"      data-color="#217784" data-img="assets/menu/hover-try.png">Try</button>
+        <button class="menu-btn" data-section="embody"   data-color="#BEF430" data-img="assets/menu/hover-embody.png">Em:body Typing</button>
+        <button class="menu-btn" data-section="inuse"    data-color="#FF5E32" data-img="assets/menu/hover-inuse.png">In Use</button>
+        <button class="menu-btn" data-section="research" data-color="#FF7D9D" data-img="assets/menu/hover-research.png">Research</button>
+        <button class="menu-btn" data-section="download" data-color="#10A0EB" data-img="assets/menu/hover-download.png">Download</button>
+        <button class="menu-btn" data-section="credits"  data-color="#2FEB72" data-img="assets/menu/hover-credits.png">Credits</button>
+    </div>
+</nav>
     <div id="hover-image-container">
         <img id="hover-image" src="" alt="">
     </div>
@@ -307,8 +310,8 @@
         </div>
     </footer>
 
-    <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
     <script src="js/typetester.js"></script>
     <script src="js/hero.js"></script>
 </body>

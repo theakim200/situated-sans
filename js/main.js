@@ -1,3 +1,10 @@
+function setVh() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setVh();
+window.addEventListener('resize', setVh);
+
 // const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const isMobile = window.innerWidth <= 768;
 

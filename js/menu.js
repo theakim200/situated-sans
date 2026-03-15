@@ -6,8 +6,6 @@ if (menuToggle) {
     });
 }
 
-document.getElementById('menu-buttons').classList.remove('open');
-
 const menuBtns = document.querySelectorAll('.menu-btn');
 const hoverImgContainer = document.getElementById('hover-image-container');
 const hoverImg = document.getElementById('hover-image');
@@ -33,6 +31,7 @@ menuBtns.forEach(btn => {
 
     if (isMobile) {
         btn.addEventListener('click', () => {
+            document.getElementById('menu-buttons').classList.remove('open');
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 
             // 이전 fade 취소

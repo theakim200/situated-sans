@@ -1014,6 +1014,7 @@ pre {
     /* Sections 공통 */
     #info, #embody, #download, #credits, #research, #inuse {
         padding: 60px 20px 80px 20px;
+        gap: 50px;
     }
 
     /* 2컬럼 → 1컬럼 */
@@ -1045,6 +1046,10 @@ pre {
     .axis-text {
         font-size: 110px;
     }
+    #gallery-caption {
+        margin-top: 15px;
+        font-size: 16px;
+    }
 
     /* In Use */
     #inuse-grid {
@@ -1052,7 +1057,10 @@ pre {
         min-height: unset;
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: 40px;
+    }
+    #inuse-title {
+        margin-bottom: 30px;
     }
 
     #inuse-1, #inuse-2, #inuse-3 {
@@ -1061,9 +1069,58 @@ pre {
     }
 
     /* Try */
+    #try {
+        padding: 60px 20px;
+    }
     #try-display {
         font-size: 60px;
+        white-space: normal;
+        text-align: center;
     }
+    #try-sliders {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    /* Embody Typing */
+    #embody-img {
+        width: 100%;
+    }
+    #embody-img-caption {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    #embody-gallery-caption {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    /* Research */
+    #research-gallery-caption {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    /* Download */
+    #download {
+        gap: 22px;
+    }
+    #download-snippets {
+        padding-top: 30px;
+    }
+
+    /* Download */
+    #credits {
+        gap: 22px;
+    }
+    #credits-right {
+        justify-content: flex-start;
+    }
+    #credits-table {
+        width: 100%;
+    }
+
 
     /* 코드 스니핏 */
     pre {

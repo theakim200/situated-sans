@@ -12,6 +12,8 @@ const hoverStyles = {
     credits:  { ital: 50, wdth: 100, wght: 60  },
 };
 
+let fadeTimeout = null;
+
 menuBtns.forEach(btn => {
     const id = btn.dataset.section;
     const style = hoverStyles[id];
@@ -19,37 +21,59 @@ menuBtns.forEach(btn => {
     const imgSrc = btn.dataset.img;
     const imgWidth = btn.dataset.imgWidth;
 
-    btn.addEventListener('mouseenter', () => {
-        btn.style.background = color;
-        btn.style.borderRadius = '33px';
-        btn.style.fontVariationSettings = `'ital' ${style.ital}, 'wdth' ${style.wdth}, 'wght' ${style.wght}`;
+    if (isMobile) {
+        btn.addEventListener('click', () => {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 
-        hoverImg.src = imgSrc;
-        hoverImg.style.width = imgWidth + 'vw';
-        hoverImgContainer.style.display = 'block';
+            // 이전 fade 취소
+            clearTimeout(fadeTimeout);
 
-            // try 섹션 활성화 상태일 때만 multiply
+            hoverImg.src = imgSrc;
+            hoverImg.style.width = imgWidth + 'vw';
+            hoverImgContainer.style.transition = 'none';
+            hoverImgContainer.style.opacity = '1';
+            hoverImgContainer.style.display = 'block';
+
+            fadeTimeout = setTimeout(() => {
+                hoverImgContainer.style.transition = 'opacity 0.5s';
+                hoverImgContainer.style.opacity = '0';
+                setTimeout(() => {
+                    hoverImgContainer.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+
+    } else {
+        btn.addEventListener('mouseenter', () => {
+            btn.style.background = color;
+            btn.style.borderRadius = '33px';
+            btn.style.fontVariationSettings = `'ital' ${style.ital}, 'wdth' ${style.wdth}, 'wght' ${style.wght}`;
+
+            hoverImg.src = imgSrc;
+            hoverImg.style.width = imgWidth + 'vw';
+
             if (id === 'try' && document.querySelector('.menu-btn[data-section="try"]').classList.contains('active')) {
                 hoverImgContainer.style.mixBlendMode = 'multiply';
             } else {
                 hoverImgContainer.style.mixBlendMode = 'normal';
             }
-            
+
             hoverImgContainer.style.display = 'block';
-    });
+        });
 
-    btn.addEventListener('mouseleave', () => {
-        if (!btn.classList.contains('active')) {
-            btn.style.background = '';
-            btn.style.borderRadius = '';
-            btn.style.fontVariationSettings = '';
-        }
-        hoverImgContainer.style.display = 'none';
-    });
+        btn.addEventListener('mouseleave', () => {
+            if (!btn.classList.contains('active')) {
+                btn.style.background = '';
+                btn.style.borderRadius = '';
+                btn.style.fontVariationSettings = '';
+            }
+            hoverImgContainer.style.display = 'none';
+        });
 
-    btn.addEventListener('click', () => {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    });
+        btn.addEventListener('click', () => {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
 
 const sections = document.querySelectorAll('section[id]');
@@ -58,7 +82,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const id = entry.target.id;
-            const color = entry.target.dataset.color;
 
             menuBtns.forEach(btn => {
                 if (btn.dataset.section === id) {

@@ -47,7 +47,7 @@
                 // Android — 권한 요청 없이 바로
                 window.addEventListener('deviceorientation', (e) => {
                     if (e.gamma !== null) {
-                        hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
+                        hItal = Math.min(85, Math.max(0, ((e.gamma + 90) / 180) * 100));
                         applyFont();
                     }
                 });
@@ -60,9 +60,6 @@
         function onMouseMove(e) {
             const cx = window.innerWidth / 2;
             const cy = window.innerHeight / 2;
-
-            hItal = Math.min(85, (e.clientX / window.innerWidth) * 100);
-            hWdth = Math.min(80, (dist / maxDist) * 100);
 
             hItal = (e.clientX / window.innerWidth) * 100;
 

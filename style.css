@@ -106,9 +106,9 @@ section {
     overflow: visible;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    width: 100% !important;
-    display: block !important;
-    text-align: center !important;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
 
 #hero-sub {

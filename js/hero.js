@@ -13,13 +13,25 @@
 
     if (isMobile) {
         // 팝업 멘트 변경
-        popupText.innerHTML = 'You are on mobile!<br>Tilt your device and press the screen.';
+        popupText.innerHTML = 'You are on mobile!<br>Tap to allow motion access<br>and start interacting.';
 
         // Orientation → ital
-        window.addEventListener('deviceorientation', (e) => {
-            if (e.gamma !== null) {
-                hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
-                applyFont();
+        popupClose.addEventListener('click', () => {
+            popup.style.display = 'none';
+
+            if (isMobile && typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(response => {
+                        if (response === 'granted') {
+                            window.addEventListener('deviceorientation', (e) => {
+                                if (e.gamma !== null) {
+                                    hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
+                                    applyFont();
+                                }
+                            });
+                        }
+                    })
+                    .catch(console.error);
             }
         });
 

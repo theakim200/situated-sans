@@ -106,9 +106,12 @@ section {
     overflow: visible;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    width: 100%;
     display: block;
     text-align: center;
+}
+
+.is-mobile #hero-title {
+    width: 100%;
 }
 
 #hero-sub {

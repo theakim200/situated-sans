@@ -1,5 +1,8 @@
 const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+// main.js에서
+if (isMobile) document.body.classList.add('is-mobile');
+
 const galleryBtns = document.querySelectorAll('.gallery-btn');
 const galleryImgs = document.querySelectorAll('.gallery-img');
 const captionEl = document.getElementById('gallery-caption');

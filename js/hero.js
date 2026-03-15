@@ -12,30 +12,27 @@
     }
 
     if (isMobile) {
-        // 팝업 멘트 변경
-        popupText.innerHTML = 'You are on mobile!<br>Tap to allow motion access<br>and start interacting.';
+        popupText.innerHTML = 'You are on mobile!<br>Tilt your device and press the screen.';
 
-        // Orientation → ital
-        popupClose.addEventListener('click', () => {
-            popup.style.display = 'none';
+        function startOrientation() {
+            window.addEventListener('deviceorientation', (e) => {
+                if (e.gamma !== null) {
+                    hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
+                    applyFont();
+                }
+            });
+        }
 
-            if (isMobile && typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-                DeviceOrientationEvent.requestPermission()
-                    .then(response => {
-                        if (response === 'granted') {
-                            window.addEventListener('deviceorientation', (e) => {
-                                if (e.gamma !== null) {
-                                    hItal = Math.min(100, Math.max(0, ((e.gamma + 90) / 180) * 100));
-                                    applyFont();
-                                }
-                            });
-                        }
-                    })
-                    .catch(console.error);
-            }
-        });
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(response => {
+                    if (response === 'granted') startOrientation();
+                })
+                .catch(console.error);
+        } else {
+            startOrientation();
+        }
 
-        // Touch pressure → wght
         heroSection.addEventListener('touchstart', (e) => {
             const touch = e.touches[0];
             const r = (touch.radiusX + touch.radiusY) / 2;
@@ -47,7 +44,6 @@
             hWght = 83;
             applyFont();
         });
-
     } else {
         // 팝업 멘트
         popupText.innerHTML = 'You are on desktop!<br>Move the mouse, click randomly,<br>and move the cursor toward and away from the text.';

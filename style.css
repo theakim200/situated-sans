@@ -93,6 +93,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: visible;
 }
 
 #hero-title {
@@ -104,6 +105,8 @@ section {
     user-select: none;
     white-space: nowrap;
     overflow: visible;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 #hero-sub {

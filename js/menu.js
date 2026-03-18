@@ -27,18 +27,15 @@ menuBtns.forEach(btn => {
     const style = hoverStyles[id];
     const color = btn.dataset.color;
     const imgSrc = btn.dataset.img;
-    const imgWidth = btn.dataset.imgWidth;
 
     if (isMobile) {
         btn.addEventListener('click', () => {
             document.getElementById('menu-buttons').classList.remove('open');
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 
-            // 이전 fade 취소
             clearTimeout(fadeTimeout);
-
             hoverImg.src = imgSrc;
-            hoverImg.style.width = '100vw';
+            hoverImgContainer.className = id;
             hoverImgContainer.style.transition = 'none';
             hoverImgContainer.style.opacity = '1';
             hoverImgContainer.style.display = 'block';
@@ -59,15 +56,14 @@ menuBtns.forEach(btn => {
             btn.style.fontVariationSettings = `'ital' ${style.ital}, 'wdth' ${style.wdth}, 'wght' ${style.wght}`;
 
             hoverImg.src = imgSrc;
-            hoverImg.style.width = '80vw';
+            hoverImgContainer.className = id;
+            hoverImgContainer.style.display = 'block';
 
             if (id === 'try' && document.querySelector('.menu-btn[data-section="try"]').classList.contains('active')) {
                 hoverImgContainer.style.mixBlendMode = 'multiply';
             } else {
                 hoverImgContainer.style.mixBlendMode = 'normal';
             }
-
-            hoverImgContainer.style.display = 'block';
         });
 
         btn.addEventListener('mouseleave', () => {
@@ -90,7 +86,23 @@ const sections = document.querySelectorAll('section[id]');
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const id = entry.target.id;
+            const id = entry.target.id;            
+
+            if (id === 'try') {                
+                hoverImgContainer.style.mixBlendMode = 'multiply';
+            } else {
+                hoverImgContainer.style.mixBlendMode = 'normal';
+            }
+
+            if (!hoverStyles[id]) {
+                menuBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.background = '';
+                    btn.style.borderRadius = '';
+                    btn.style.fontVariationSettings = '';
+                });
+                return;
+            }
 
             menuBtns.forEach(btn => {
                 if (btn.dataset.section === id) {

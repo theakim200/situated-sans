@@ -84,7 +84,18 @@ section {
 
 #hover-image {
     display: block;
+    width: 60vw;
+    transform: translateY(10px);
 }
+
+#hover-image-container.info #hover-image { width: 75vw; transform: translateY(0px); }
+#hover-image-container.try #hover-image { width: 55vw; transform: translateY(20px); }
+#hover-image-container.embody #hover-image { width: 46vw; transform: translateY(20px); }
+#hover-image-container.inuse #hover-image { width: 73vw; }
+#hover-image-container.research #hover-image { width: 70vw; transform: translateY(20px); }
+#hover-image-container.download #hover-image { width: 62vw; }
+
+.is-mobile #hover-image { width: 100vw !important; }
 
 /* MENU TOGGLE */
 #menu-toggle {
@@ -1000,11 +1011,12 @@ pre {
     }
 
     #hero-popup {
-        top: 50%;
+        top: 42%;
         left: 50%;
         transform: translateX(-50%);
         font-size: 14px;
         width: 70vw !important;
+        box-shadow: 0 4px 22.6px 0 rgb(0 0 0 / 50%);
     }
     #hero-popup-text {
         max-width: 100%;
